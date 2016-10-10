@@ -15,13 +15,13 @@ devtools::install_github("khuranalab/FSig-SNV")
 
 ### FSig-SNV example
 User will need to 
-*(1) download drm.gene.bed file and put it in the "/path/to/dataContext"
-*(2) assign "/path/to/Output.vcf" path for FunSeq2 annotated vcf file
-*(3) assign "/path/to/output" path for saving FSig-SNV results
-*(4) tumorType: name of tumor type
-*(5) useCores: number of cores for parellel computation 
-*(6) seedNum:  random number seed number (default is 42)  
-*(7) reSampleIter: sampling iterations (suggesting number is 1000000 iterations) 
+* (1) download drm.gene.bed file and put it in the "/path/to/dataContext"
+* (2) assign "/path/to/Output.vcf" path for FunSeq2 annotated vcf file
+* (3) assign "/path/to/output" path for saving FSig-SNV results
+* (4) tumorType: name of tumor type
+* (5) useCores: number of cores for parellel computation 
+* (6) seedNum:  random number seed number (default is 42)  
+* (7) reSampleIter: sampling iterations (suggesting number is 1000000 iterations) 
 
 ```sh
 
