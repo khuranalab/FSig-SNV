@@ -1,4 +1,4 @@
-### FSig-SNV
+## FSig-SNV
 
 ### An R package detecting SNV coding and non-coding drivers in cancer
 
@@ -9,6 +9,6 @@ You will need to install devtools for running FSig-SNV package
 
 ```sh
 install.packages(devtools)
-library(devtools);
-devtools::install_github("khuranalab/FSig-SNV");  
+library(devtools)
+devtools::install_github("khuranalab/FSig-SNV")
 ```
