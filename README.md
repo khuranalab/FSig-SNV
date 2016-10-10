@@ -5,7 +5,7 @@
 Installing FSig-SNV
 
 
-You will need to install devtools for running FSig-SNV package
+You will need to install devtools for running FSigSNV package
 
 ```sh
 install.packages(devtools)
