@@ -1,6 +1,6 @@
-Package: fsigsnv
+Package: FSigSNV
 Type: Package
-Title: FSig-SNV
+Title: FSigSNV
 Version: 0.1.0
 Author: Eric Minwei Liu [aut,cre], Priyanka Dhingra [aut]
 Maintainer: Eric Minwei Liu <emliu.research@gmail.com>
