@@ -8,7 +8,7 @@ Installing FSig-SNV
 You will need to install devtools for running FSigSNV package
 
 ```sh
-install.packages(devtools)
-library(devtools)
+install.packages("devtools")
+library("devtools")
 devtools::install_github("khuranalab/FSig-SNV")
 ```
