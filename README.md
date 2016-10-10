@@ -13,50 +13,37 @@ library("devtools")
 devtools::install_github("khuranalab/FSig-SNV")
 ```
 
-FSig-SNV example
+### FSig-SNV example
+User will need to 
+(1) download drm.gene.bed file and put it in the "/path/to/dataContext"
+(2) assign "/path/to/Output.vcf" path for FunSeq2 annotated vcf file
+(3) assign "/path/to/output" path for saving FSig-SNV results
+(4) tumorType: name of tumor type
+(5) useCores: number of cores for parellel computation 
+(6) seedNum:  random number seed number (default is 42)  
+(7) reSampleIter: sampling iterations (suggesting number is 1000000 iterations) 
 
 ```sh
 
-library(jsonlite)
-library(fsigsnv)
-
-
-config <- fromJSON("tmp/fsigSNV.json")
+library(FsigSNV)
 
 #####
 # global parameters setup
 #####
 
-dataContextDir<-config$global$dataContextDir
-outputDir<-config$global$outputDir
-seedNum<-config$global$seedNum
-reSampleIter<-config$global$reSampleIter
-useCores<-config$global$useCores
-debugMode<-config$global$debugMode
-
-tumorTypeList<-names(config$tumorTypes)
-
-for(tumorType in tumorTypeList)
-{
-#cancerType<-names(config$cancerTypes)[2]
+  dataContextDir<-"/path/to/dataContext"
+  funseq2OutputFile<-"/path/to/Output.vcf"
+  outputDir<-"/path/to/output"
+  tumorType<-"Prostate"
+  seedNum<-42
+  reSampleIter<-10000
+  useCores<-6
+  debugMode<-FALSE
 
 #####
-# setup netbox related parameters
-#####
-
-  #source(file.path("tmp","fsigsnvParameterSetup.R"))
-
-#####
-
-  funseq2OutputFile<-config$tumorTypes[[tumorType]]$funseq2OutputFile
-
+  
   preProcessVCF(funseq2OutputFile,outputDir,tumorType,useCores)
 
-
-#####
-
-  # where to load preProcessed Rd
-  inputDir<-outputDir
 
 #####
 
@@ -64,7 +51,6 @@ for(tumorType in tumorTypeList)
   cdsOutputDf<-getCDSpvalue(inputDir,tumorType,mutationType,
                             reSampleIter=reSampleIter,
                             seedNum=seedNum,debugMode=debugMode)
-
 
 #####
 
@@ -90,12 +76,10 @@ for(tumorType in tumorTypeList)
                                     reSampleIter=reSampleIter,
                                     seedNum=seedNum,
                                     enhancerGeneInteractionFileName,
-                                    useCores=6,
+                                    useCores=useCores,
                                     debugMode=debugMode)
 
 #####
-
-}
 
 ```
 
