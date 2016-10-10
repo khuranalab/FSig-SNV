@@ -44,25 +44,24 @@ library(FsigSNV)
   
   preProcessVCF(funseq2OutputFile,outputDir,tumorType,useCores)
 
-
 #####
 
   mutationType<-"CDS"
-  cdsOutputDf<-getCDSpvalue(inputDir,tumorType,mutationType,
+  cdsOutputDf<-getCDSpvalue(outputDir,tumorType,mutationType,
                             reSampleIter=reSampleIter,
                             seedNum=seedNum,debugMode=debugMode)
 
 #####
 
   mutationType<-"promoter"
-  promoterOutputDf<-getPromoterPvalue(inputDir,tumorType,mutationType,
+  promoterOutputDf<-getPromoterPvalue(outputDir,tumorType,mutationType,
                             reSampleIter=reSampleIter,
                             seedNum=seedNum,debugMode=debugMode)
 
 #####
 
   mutationType<-"lincRNA"
-  lincRNAOutputDf<-getLincRNAPvalue(inputDir,tumorType,mutationType,
+  lincRNAOutputDf<-getLincRNAPvalue(outputDir,tumorType,mutationType,
                                       reSampleIter=reSampleIter,
                                       seedNum=seedNum,debugMode=debugMode)
 #####
@@ -72,7 +71,7 @@ library(FsigSNV)
   enhancerGeneInteractionFileName<-fileName
 
   mutationType<-"enhancerUnit"
-  enhancerUnitOutputDf<-getEnhancerUnitPvalue(inputDir,tumorType,mutationType,
+  enhancerUnitOutputDf<-getEnhancerUnitPvalue(outputDir,tumorType,mutationType,
                                     reSampleIter=reSampleIter,
                                     seedNum=seedNum,
                                     enhancerGeneInteractionFileName,
