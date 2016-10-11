@@ -25,7 +25,7 @@ User will need to
 
 ```sh
 
-library(FsigSNV)
+library(FSigSNV)
 
 #####
 # global parameters setup
